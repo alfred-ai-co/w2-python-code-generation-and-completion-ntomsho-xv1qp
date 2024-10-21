@@ -88,3 +88,52 @@ To run the application locally, make sure you have Python installed. Then follow
 
 ## License
 This project is licensed under the MIT License. See the License file for details.
+
+## Documentation
+## Project Endpoints
+
+### Create a New Project
+- **Endpoint:** `POST /projects`
+- **Description:** Create a new project.
+- **Request Body:**
+  - `name` (string): The name of the project.
+  - `description` (string): The description of the project.
+- **Response:**
+  - `200 OK`: The created project.
+- **Errors:**
+  - `500 Internal Server Error`: If there is a database error.
+
+### Retrieve a Project
+- **Endpoint:** `GET /projects/{project_id}`
+- **Description:** Retrieve a project by its ID.
+- **Path Parameters:**
+  - `project_id` (int): The ID of the project to retrieve.
+- **Response:**
+  - `200 OK`: The retrieved project.
+- **Errors:**
+  - `404 Not Found`: If the project is not found.
+  - `500 Internal Server Error`: If there is a database error.
+
+### Update a Project
+- **Endpoint:** `PUT /projects/{project_id}`
+- **Description:** Update a project by its ID.
+- **Path Parameters:**
+  - `project_id` (int): The ID of the project to update.
+- **Request Body:**
+  - `name` (string): The updated name of the project.
+  - `description` (string): The updated description of the project.
+- **Response:**
+  - `200 OK`: The updated project.
+- **Errors:**
+  - `404 Not Found`: If the project is not found.
+  - `500 Internal Server Error`: If there is a database error.
+
+### Delete a Project
+- **Endpoint:** `DELETE /projects/{project_id}`
+- **Description:** Delete a project by its ID.
+- **Path Parameters:**
+  - `project_id` (int): The ID of the project to delete.
+- **Response:**
+  - `200 OK`: A message indicating the project was deleted.
+- **Errors:**
+  - `500 Internal Server Error`: If there is a database error.
